@@ -1,506 +1,267 @@
 /* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f7fafc;
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f7fafc;
+    
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none;
+    color: #fff;
 }
 
 a:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-/* Container - Desktop Layout */
+/* Container */
 .container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    min-height: 100vh;
-    background: #ffffff; /* Ensure content area has a background */
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
 }
 
 
 /* Sidebar */
 .sidebar {
-    width: 280px;
-    flex-shrink: 0;
-    background: linear-gradient(135deg, #3b7e23, #4fa934);
-    color: #fff;
-    padding: 20px 15px; /* Adjusted padding */
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-    display: flex; /* Use flexbox for internal layout */
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-}
-
-.profile-section {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    width: 100%; /* Take full width of sidebar padding */
-    text-align: center; /* Center text within this section */
+    width: 13%; /* Reduced size */
+    background: linear-gradient(45deg, #3b7e23, #4fa934); 
+    color: #fff;
+    padding: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: relative;
+    border-radius: 5px;
 }
 
 .sidebar .profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    display: block;
-    border: 4px solid #fff;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: block;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar h1 {
-    font-size: 24px;
-    margin: 10px 0 5px; /* Adjusted margin */
-    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .sidebar p {
-    margin: 3px 0;
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.9);
-    word-wrap: break-word; /* Ensure long words break */
-    padding: 0 5px; /* Add slight horizontal padding */
+    text-align: center;
+    margin: 5px 0;
+    font-size: 14px;
 }
 
-.sidebar .position {
-    font-weight: 600;
-    color: #a8e063;
-    margin-top: 10px;
-}
-
-.contact-info {
-    margin-top: 10px !important;
-    font-size: 14px !important;
-}
-
-.social-icons {
-    margin-top: 15px !important;
+.sidebar .social-icons {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .social-icons a {
-    margin: 0 10px;
-    font-size: 20px;
-    color: #fff;
-    transition: transform 0.2s ease-in-out;
-}
-
-.social-icons a:hover {
-    color: #a8e063;
-    transform: scale(1.1);
+    margin: 0 5px;
+    font-size: 18px;
+    color: #fff;
 }
 
 .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    width: 100%; /* Ensure menu takes full width */
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
 }
 
 .sidebar-menu li {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .sidebar-menu a {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    font-weight: 400;
-    text-align: left;
-    transition: background 0.3s, padding-left 0.3s;
-    color: #fff; /* Ensure link color is white */
+    display: block;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    text-align: center;
 }
 
 .sidebar-menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    padding-left: 20px;
+    background: rgba(255, 255, 255, 0.3);
 }
-/* Hide close button on desktop */
-.close-sidebar, .menu-btn {
-    display: none;
-}
-
 
 /* Content */
 .content {
-    flex-grow: 1;
-    padding: 30px;
-    position: relative;
-    overflow-y: auto;
-    background: #ffffff;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+    background: #ffffff;
+    overflow-x: hidden;
 }
-
-.content-section {
-    margin-top: 40px;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #4fa934;
-    transition: box-shadow 0.3s ease;
-}
-
-.content-section:first-of-type { /* Adjust margin for the first section */
-    margin-top: 0;
-}
-
-
-.content-section:hover {
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-}
-
 .content h2 {
-    font-size: 28px;
-    color: #4fa934;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #a8e063;
-    font-weight: 700;
+    font-size: 24px;
+    color: #56ab2f;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-.content h2 i {
-    margin-right: 10px;
+.content h2::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: #a8e063;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
 }
 
 .content ul {
-    list-style: none;
-    padding-left: 0;
+    list-style: circle;
+    padding-left: 20px;
 }
 
-.course-list li {
-    background-color: #f0fdf4;
-    margin-bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    border-left: 3px solid #4fa934;
+.content ul li {
+    margin-bottom: 10px;
 }
 
 /* Abstract Shapes */
+.abstract-shape {
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at top left, #a8e063, transparent);
+    border-radius: 50%;
+    z-index: -1;
+    
+}
+
 .content::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle at top right, rgba(168, 224, 99, 0.3), transparent);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.5;
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at bottom right, #56ab2f, transparent);
+    border-radius: 50%;
+    z-index: -1;
+    
 }
 
 /* Download CV button*/
 .cv-download-btn {
-    text-align: right;
-    margin-bottom: 20px;
+    position: relative;
+    top: 5px;
+    right: -1145px;
 }
 
 .cv-download-btn a {
-    padding: 12px 25px;
-    background: #4fa934;
-    color: white;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(79, 169, 52, 0.3);
-    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #3b7e23, #4fa934); 
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .cv-download-btn a:hover {
-    background: #3b7e23;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(79, 169, 52, 0.5);
+    background-color: #45a049; 
 }
 
 /* Education Section */
+.education-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+
+.education-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
 .education-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #fcfcfc;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.education-item:hover {
-    background-color: #f0fdf4;
-}
-
-.education-details {
-    flex-grow: 1;
-    margin-right: 15px; /* Add space between details and dates */
+.education-item:last-child {
+    margin-bottom: 0;
 }
 
 .education-details h3 {
-    font-size: 19px;
-    font-weight: 600;
-    color: #3b7e23;
-    margin-top: 0; /* Remove extra margin */
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #222;
 }
 
 .education-details p {
-    margin: 3px 0;
-    font-size: 15px;
-    color: #555;
-}
-
-.education-dates {
-    flex-shrink: 0;
-    text-align: right;
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
 }
 
 .education-dates p {
-    font-weight: 600;
-    color: #888;
-    margin-top: 0; /* Align with h3 */
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
 }
 
-/* Journals and Articles */
-#journals h3 {
-    font-size: 20px;
-    color: #4fa934;
-    border-left: 5px solid #a8e063;
-    padding-left: 10px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-
-.journal-item {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-/* Footer */
 .site-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Push footer to the bottom if content is short */
+    background-color: #28a745; /* Matches your theme */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 0px; /* Space above the footer */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
 }
 
 .footer-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-container p {
+    margin: 5px 0;
 }
 
 .footer-links a {
-    color: #a8e063;
-    margin: 0 10px;
-    transition: color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
 }
 
 .footer-links a:hover {
-    color: #4fa934;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-
-/* --- ANIMATIONS (Professional Effects) --- */
-
-/* Base State for Hidden Elements */
-.fade-in, .fade-in-up {
-    opacity: 0;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Scroll-Reveal: Fade In */
-.fade-in {
-    transform: translateY(0); /* Default position */
-}
-.fade-in.visible {
-    opacity: 1;
-}
-
-/* Scroll-Reveal: Fade In and Up */
-.fade-in-up {
-    transform: translateY(20px); /* Start slightly below */
-}
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0); /* Move to final position */
-}
-
-
-/* --- RESPONSIVENESS (Media Queries) --- */
-
-/* Tablet and Smaller Desktop (Max 1024px) */
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 250px;
-        padding: 15px;
-    }
-
-    .content {
-        padding: 20px;
-    }
-    
-    .cv-download-btn {
-        /* Adjust position for smaller screens */
-        text-align: center;
-        margin-right: 0;
-        margin-top: 10px;
-    }
-}
-
-
-/* Mobile Devices (Max 768px) - Full Responsiveness */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        min-height: auto;
-    }
-
-    /* Sidebar - Hidden by default on mobile */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 80%;
-        max-width: 300px;
-        z-index: 1000;
-        transform: translateX(-100%);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        padding: 20px 10px; /* Adjust padding for mobile sidebar */
-    }
-    
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    /* Menu Toggle Button for Mobile */
-    .menu-btn {
-        display: block;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 1001;
-        background: #4fa934;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        font-size: 20px;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Close Button for Sidebar on Mobile */
-    .close-sidebar {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: transparent;
-        color: white;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    .content {
-        width: 100%;
-        padding: 20px 15px;
-        padding-top: 60px; /* Space for the menu button */
-    }
-
-    .cv-download-btn {
-        text-align: center;
-        margin-bottom: 25px;
-        margin-top: 15px;
-    }
-    
-    .education-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .education-details {
-        margin-right: 0; /* Remove right margin on mobile */
-    }
-
-    .education-dates {
-        text-align: left;
-        margin-top: 10px;
-    }
-
-    .content h2 {
-        font-size: 24px;
-    }
-    
-    .content::before {
-        display: none;
-    }
-}
-
-/* Very Small Devices (Max 480px) */
-@media (max-width: 480px) {
-    .sidebar {
-        width: 90%; /* Take more width on very small screens */
-        max-width: none; /* No max-width constraint */
-    }
-    
-    .sidebar .profile-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .sidebar h1 {
-        font-size: 20px;
-    }
-
-    .sidebar p {
-        font-size: 13px;
-    }
-
-    .social-icons a {
-        font-size: 18px;
-    }
-
-    .content {
-        padding: 15px;
-        padding-top: 60px;
-    }
-
-    .content-section {
-        padding: 20px;
-    }
-
-    .content h2 {
-        font-size: 22px;
-    }
-
-    .cv-download-btn a {
-        font-size: 13px;
-        padding: 10px 20px;
-    }
+.footer-links {
+    margin-top: 10px;
 }
