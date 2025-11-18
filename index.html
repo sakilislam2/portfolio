@@ -1,166 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakil Islam - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakil Islam - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-                <div class="sidebar" id="sidebar">
-            <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
-            <div class="profile-section">
-                                <img src="Sakil Islam.png" alt="Sakil Islam" class="profile-img">
-                <h1>Sakil Islam</h1>
-                <p class="position">Student</p>
-                <p class="department">Biochemistry and Biotechnology</p>
-                <p class="contact-info">
-                    <i class="fas fa-phone"></i> +880 1522-109713</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/Sakilislam02" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://linkedin.com/in/sakil-islam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                                        <a href="mailto:your.email@example.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#courses-enrolled">Courses Enrolled</a></li>
-                <li><a href="#areas-of-interest">Areas of Interest</a></li>
-                <li><a href="#courses-learned">Courses Learned</a></li>
-                <li><a href="#journals">Journals & Articles</a></li>
-            </ul>
-        </div>
+    <div class="container">
+        <!-- Mobile Menu Button (Hamburger Icon) -->
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
 
-                <div class="content">
-                        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <!-- Left Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="profile-section">
+                <!-- NOTE: Changed local path to a generic placeholder URL for cross-device compatibility -->
+                <img src="https://placehold.co/100x100/4fa934/ffffff?text=SI" alt="Sakil Islam" class="profile-img">
+                <h1>Sakil Islam</h1>
+                <p class="position">Student</p>
+                <p class="department">Biochemistry and Biotechnology</p>
+                <p class="contact-info">
+                    <i class="fas fa-phone"></i> +880 1522-109713</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Sakilislam02" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/in/sakil-islam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgldrdwQJJjkJhdsldxbDLWKbtmKfqtsPcsvXBdqLMbTqFGPkcNcrDKZHKjjbtQhBmTbq" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#about-me" class="nav-link">About Me</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#courses-enrolled" class="nav-link">Courses Enrolled</a></li>
+                <li><a href="#areas-of-interest" class="nav-link">Areas of Interest</a></li>
+                <li><a href="#courses-learned" class="nav-link">Courses Learned</a></li>
+                <li><a href="#journals" class="nav-link">Journals & Articles</a></li>
+            </ul>
+        </div>
 
-                        <div class="cv-download-btn">
-                <a href="https://drive.google.com/uc?export=download&id=1rFaYcSyD7NCcF2f9KRxopPBRvMSGpf1V" download="Sakil_Islam_CV.pdf"><i class="fas fa-file-download"></i> Download CV</a>
-            </div>
+        <!-- Right Content -->
+        
+        <div class="content">
 
+            <!-- Download CV button -->
+            <div class="cv-download-btn">
+                <a href="https://drive.google.com/uc?export=download&id=1rFaYcSyD7NCcF2f9KRxopPBRvMSGpf1V" download="Sakil_Islam_CV.pdf">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
 
-                        <div class="abstract-shape"></div>
-            
-            <section id="about-me" class="content-section">
-                <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <p class="fade-in">I am presently enrolled in the University of Science and Technology Chittagong (USTC), where I am studying Biochemistry and Biotechnology for my degree. Molecular biology, genetics, and bioinformatics are among my areas of interest. I have a strong desire to investigate novel research avenues that have the potential to enhance healthcare and promote environmental sustainability. I am excited to work with others on initiatives that let me use my abilities and learn new things.</p>
-            </section>
-            
-            <section id="education" class="content-section">
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <div class="education-item fade-in-up">
-                    <div class="education-details"> 
-                        <h3>B.Sc (Hon's) in Biochemistry and Biotechnology</h3>
-                        <p>University of Science and Technology Chittagong  <br> Chattogram, Bangladesh</p>
-                    </div>
-                    <div class="education-dates">
-                        <p>10 June 2024 - Present</p>
-                    </div>
-                </div>
-                <div class="education-item fade-in-up">
-                    <div class="education-details"> 
-                        <h3>Higher Secondary Certificate (HSC)</h3>
-                        <p>Chattogram Bandar College - Chattogram</p>
-                        <p class="gpa">GPA: 5.00/5.00</p>
-                    </div>
-                    <div class="education-dates">
-                        <p>March 2022 - August 2023</p>
-                    </div>
-                </div>              
-            </section>
-            
-            <section id="courses-enrolled" class="content-section">
-                <h2><i class="fas fa-book-reader"></i> Courses Enrolled</h2>
-                <p class="fade-in">**B.Sc. in Biochemistry and Biotechnology**</p>
-            </section>
-            
+            <!-- Main Area Section -->
+            <div class="abstract-shape"></div>
+            
+            <section id="about-me" class="content-section">
+                <h2><i class="fas fa-user-circle"></i> About Me</h2>
+                <p>I am presently enrolled in the University of Science and Technology Chittagong (USTC), where I am studying Biochemistry and Biotechnology for my degree. Molecular biology, genetics, and bioinformatics are among my areas of interest. I have a strong desire to investigate novel research avenues that have the potential to enhance healthcare and promote environmental sustainability. I am excited to work with others on initiatives that let me use my abilities and learn new things.</p>
+            </section>
+                
+          
+            <section id="education" class="content-section">
+                <h2><i class="fas fa-book-reader"></i> Education</h2>
+                <div class="education-item">
+                    <div class="education-details"> <i class="fas fa-graduation-cap"></i>
+                        <h3>B.Sc (Hon's) in Biochemistry and Biotechnology</h3>
+                        <p>University of Science and Technology Chittagong <br> Chattogram, Bangladesh</p>
+                    </div>
+                    <div class="education-dates">
+                        <p>10 June 2024 - Present</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-details"> <i class="fas fa-school"></i>
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p>Chattogram Bandar College - Chattogram</p>
+                        <p class="gpa">GPA: 5.00/5.00</p>
+                    </div>
+                    <div class="education-dates">
+                        <p>March 2022 - August 2023</p>
+                    </div>
+                </div>              
+            </section>
+            
+            
+            <section id="courses-enrolled" class="content-section">
+                <h2><i class="fas fa-list-alt"></i> Courses Enrolled</h2>
+                <p>B.Sc. in Biochemistry and Biotechnology</p>
+            </section>
+            
+            
 
-            <section id="areas-of-interest" class="content-section">
-                <h2><i class="fas fa-flask"></i> Areas of Interest</h2>
-                <ul class="interest-list fade-in">
-                    <li>**Molecular Biology** - _Studying biological activities at a molecular level._</li>
-                    <li>**Bio Informatics** - _Applying computational techniques to manage and analyze biological data._</li>
-                    <li>**Cancer Biology** - _Investigating the cellular and molecular basis of cancer development._</li>
-                </ul>
-            </section>
+            <section id="areas-of-interest" class="content-section">
+                <h2><i class="fas fa-flask"></i> Areas of Interest</h2>
+                <ul class="interest-list">
+                    <li>Molecular Biology</li>
+                    <li>Bio Informatics</li>
+                    <li>Cancer Biology</li>
+                </ul>
+            </section>
 
-           <section id="courses-learned" class="content-section">
-                <h2><i class="fas fa-dna"></i> Courses Learned</h2>
-                <ul class="course-list fade-in">
-                    <li>Biophysical Chemistry I</li>
-                    <li>Bioorganic Chemistry I</li>
-                    <li>Basic Biochemistry</li>
-                    <li>Introductory Biotechnology</li>
-                    <li>Metabolism II</li>
-                    <li>Basic Immunology</li>
-                    <li>Clinical Biochemistry</li>
-                    <li>Plant Biochemistry</li>
-                    <li>Immunogenetics</li>
-                    <li>Environmental Biotechnology</li>
-                </ul>
-           </section>
+           <section id="courses-learned" class="content-section">
+                <h2><i class="fas fa-chalkboard-teacher"></i> Courses Learned</h2>
+                <ul class="course-list">
+                    <li>Biophysical Chemistry I</li>
+                    <li>Bioorganic Chemistry I</li>
+                    <li>Basic Biochemistry</li>
+                    <li>Introductory Biotechnology</li>
+                    <li>Metabolism II</li>
+                    <li>Basic Immunology</li>
+                    <li>Clinical Biochemistry</li>
+                    <li>Plant Biochemistry</li>
+                    <li>Immunogenetics</li>
+                    <li>Environmental Biotechnology</li>
+                </ul>
+            </section>
+           
 
-            <section id="journals" class="content-section">
-                <h2><i class="fas fa-file-alt"></i> Journals & Articles</h2>
-                <h3>First Authorships</h3>
-                <ul>
-                    <li class="journal-item fade-in-up">**[Placeholder Title 1]** Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</li>
-                </ul>
-                <h3>Second Authorships</h3>
-                <ul>
-                    <li class="journal-item fade-in-up">**[Placeholder Title 2]** Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</li>
-                </ul>
-            </section>
-        </div>
-    </div>
-    
-        <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2025 Sakil Islam. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#about-me">About</a> | <a href="#education">Education</a> | <a href="#journals">Publications</a>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // JavaScript for Sidebar Toggle (Mobile Responsiveness)
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.add('active');
-        });
-        document.getElementById('closeSidebar').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.remove('active');
-        });
-        // Close sidebar on menu item click (optional)
-        document.querySelectorAll('.sidebar-menu a').forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    document.getElementById('sidebar').classList.remove('active');
-                }
-            });
-        });
-        
-        // JavaScript for Scroll Reveal Animations
-        const fadeInElements = document.querySelectorAll('.fade-in, .fade-in-up');
+            <section id="journals" class="content-section">
+                <h2><i class="fas fa-feather-alt"></i> Journals & Articles</h2>
+                <div class="journal-category">
+                    <h3>First Authorships</h3>
+                    <ul>
+                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+                    </ul>
+                </div>
+                <div class="journal-category">
+                    <h3>Second Authorships</h3>
+                    <ul>
+                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+                    </ul>
+                </div>
+            </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing once visible
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
+            <!-- Sticky footer positioning will be handled by CSS outside the .content div -->
 
-        fadeInElements.forEach(element => {
-            observer.observe(element);
-        });
-    </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Sakil Islam. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#about-me">About</a> | 
+                <a href="#education">Education</a> | 
+                <a href="#journals">Publications</a>
+            </div>
+            <p class="built-with">Built with <i class="fas fa-code"></i> and Passion.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // 1. Toggle Sidebar Visibility
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                menuToggle.querySelector('i').classList.toggle('fa-bars');
+                menuToggle.querySelector('i').classList.toggle('fa-times');
+            });
+
+            // 2. Close Sidebar when a link is clicked (for smoother mobile navigation)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('active');
+                        menuToggle.querySelector('i').classList.remove('fa-times');
+                        menuToggle.querySelector('i').classList.add('fa-bars');
+                    }
+                });
+            });
+            
+            // 3. Simple Scroll Animation for Sections (Optional but adds professionalism)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            });
+
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('fade-in-start'); // Initial state for animation
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
