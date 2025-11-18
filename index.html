@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sakil Islam - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Poppins Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Left Sidebar (Desktop View) -->
+        <!-- Left Sidebar (Now static/non-sliding) -->
         <div class="sidebar" id="sidebar">
             <div class="profile-section">
-                <!-- NOTE: Local path changed to placeholder for compatibility -->
+                <!-- Profile Image remains in the sidebar -->
+                <!-- NOTE: Using a placeholder URL for compatibility -->
                 <img src="https://placehold.co/120x120/4fa934/ffffff?text=SI" alt="Sakil Islam" class="profile-img">
-                <h1>Sakil Islam</h1>
-                <p class="position">Student</p>
-                <p class="department">Biochemistry and Biotechnology</p>
-                <p class="contact-info">
-                    <i class="fas fa-phone"></i> +880 1522-109713</p>
+                
+                <!-- Only social icons remain in the sidebar -->
                 <div class="social-icons">
                     <a href="https://www.facebook.com/Sakilislam02" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <!-- Removed LinkedIn icon from sidebar as requested -->
+                    <a href="https://linkedin.com/in/sakil-islam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgldrdwQJJjkJhdsldxbDLWKbtmKfqtsPcsvXBdqLMbTqFGPkcNcrDKZHKjjbtQhBmTbq" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -41,16 +37,6 @@
         <!-- Right Content -->
         <div class="content">
 
-            <!-- New: Top Navigation Menu for Small Screens -->
-            <div class="top-nav-menu" role="navigation">
-                <a href="#about-me" class="top-nav-link">About Me</a>
-                <a href="#education" class="top-nav-link">Education</a>
-                <a href="#courses-enrolled" class="top-nav-link">Enrolled</a>
-                <a href="#areas-of-interest" class="top-nav-link">Interests</a>
-                <a href="#courses-learned" class="top-nav-link">Learned</a>
-                <a href="#journals" class="top-nav-link">Journals</a>
-            </div>
-            
             <!-- Download CV button -->
             <div class="cv-download-btn">
                 <a href="https://drive.google.com/uc?export=download&id=1rFaYcSyD7NCcF2f9KRxopPBRvMSGpf1V" download="Sakil_Islam_CV.pdf">
@@ -61,19 +47,27 @@
             <!-- Main Area Section -->
             <div class="abstract-shape"></div>
             
-            <section id="about-me" class="content-section">
-                <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <!-- New content added from LinkedIn profile area -->
-                <p class="profile-summary">
-                    **LinkedIn Profile Summary Snippet:** [Placeholder for summary that was requested to be moved from the LinkedIn profile area.]
-                    <br><br>
-                    I am presently enrolled in the University of Science and Technology Chittagong (USTC), where I am studying Biochemistry and Biotechnology for my degree. Molecular biology, genetics, and bioinformatics are among my areas of interest. I have a strong desire to investigate novel research avenues that have the potential to enhance healthcare and promote environmental sustainability. I am excited to work with others on initiatives that let me use my abilities and learn new things.
-                </p>
+            <section id="about-me" class="content-section fade-in-start">
+                <!-- Profile details moved here, at the top of the main content -->
+                <div class="profile-header-main">
+                    <h1>Sakil Islam</h1>
+                    <p class="position-info">
+                        <span class="position">Student</span> 
+                        <span class="separator">|</span> 
+                        <span class="department">Biochemistry and Biotechnology</span>
+                    </p>
+                    <p class="contact-info-main">
+                        <i class="fas fa-phone"></i> +880 1522-109713
+                    </p>
+                </div>
+                
+                <h2 class="section-title-with-icon"><i class="fas fa-user-circle"></i> About Me</h2>
+                <p>I am presently enrolled in the University of Science and Technology Chittagong (USTC), where I am studying Biochemistry and Biotechnology for my degree. Molecular biology, genetics, and bioinformatics are among my areas of interest. I have a strong desire to investigate novel research avenues that have the potential to enhance healthcare and promote environmental sustainability. I am excited to work with others on initiatives that let me use my abilities and learn new things.</p>
             </section>
                 
           
-            <section id="education" class="content-section">
-                <h2><i class="fas fa-book-reader"></i> Education</h2>
+            <section id="education" class="content-section fade-in-start">
+                <h2 class="section-title-with-icon"><i class="fas fa-book-reader"></i> Education</h2>
                 <div class="education-item">
                     <div class="education-details"> <i class="fas fa-graduation-cap"></i>
                         <h3>B.Sc (Hon's) in Biochemistry and Biotechnology</h3>
@@ -96,15 +90,15 @@
             </section>
             
             
-            <section id="courses-enrolled" class="content-section">
-                <h2><i class="fas fa-list-alt"></i> Courses Enrolled</h2>
+            <section id="courses-enrolled" class="content-section fade-in-start">
+                <h2 class="section-title-with-icon"><i class="fas fa-list-alt"></i> Courses Enrolled</h2>
                 <p>B.Sc. in Biochemistry and Biotechnology</p>
             </section>
             
             
 
-            <section id="areas-of-interest" class="content-section">
-                <h2><i class="fas fa-flask"></i> Areas of Interest</h2>
+            <section id="areas-of-interest" class="content-section fade-in-start">
+                <h2 class="section-title-with-icon"><i class="fas fa-flask"></i> Areas of Interest</h2>
                 <ul class="interest-list">
                     <li>Molecular Biology</li>
                     <li>Bio Informatics</li>
@@ -112,8 +106,8 @@
                 </ul>
             </section>
 
-           <section id="courses-learned" class="content-section">
-                <h2><i class="fas fa-chalkboard-teacher"></i> Courses Learned</h2>
+           <section id="courses-learned" class="content-section fade-in-start">
+                <h2 class="section-title-with-icon"><i class="fas fa-chalkboard-teacher"></i> Courses Learned</h2>
                 <ul class="course-list">
                     <li>Biophysical Chemistry I</li>
                     <li>Bioorganic Chemistry I</li>
@@ -129,8 +123,8 @@
             </section>
            
 
-            <section id="journals" class="content-section">
-                <h2><i class="fas fa-feather-alt"></i> Journals & Articles</h2>
+            <section id="journals" class="content-section fade-in-start">
+                <h2 class="section-title-with-icon"><i class="fas fa-feather-alt"></i> Journals & Articles</h2>
                 <div class="journal-category">
                     <h3>First Authorships</h3>
                     <ul>
@@ -163,26 +157,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Function to handle smooth scrolling for all internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Intersection Observer for Section Fade-in Animation (Remains the same)
+            // Simple Scroll Animation for Sections (kept for professional look)
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('fade-in');
-                        // Optional: unobserve after first intersection
-                        // observer.unobserve(entry.target); 
-                    } else {
-                        // Optional: reset state when scrolling away for re-triggering animation
-                        // entry.target.classList.remove('fade-in'); 
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
@@ -192,6 +172,29 @@
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.add('fade-in-start'); // Initial state for animation
                 observer.observe(section);
+            });
+            
+            // Highlight active link on scroll
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active-link');
+                    }
+                });
             });
         });
     </script>
