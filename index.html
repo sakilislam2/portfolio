@@ -9,56 +9,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Left Sidebar (Now static/non-sliding) -->
-        <div class="sidebar" id="sidebar">
-            <div class="profile-section">
-                <!-- Profile Image remains in the sidebar -->
-                <!-- NOTE: Using a placeholder URL for compatibility -->
-                <img src="https://placehold.co/120x120/4fa934/ffffff?text=SI" alt="Sakil Islam" class="profile-img">
-                
-                <!-- Only social icons remain in the sidebar -->
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/Sakilislam02" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://linkedin.com/in/sakil-islam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgldrdwQJJjkJhdsldxbDLWKbtmKfqtsPcsvXBdqLMbTqFGPkcNcrDKZHKjjbtQhBmTbq" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="#about-me" class="nav-link">About Me</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#courses-enrolled" class="nav-link">Courses Enrolled</a></li>
-                <li><a href="#areas-of-interest" class="nav-link">Areas of Interest</a></li>
-                <li><a href="#courses-learned" class="nav-link">Courses Learned</a></li>
-                <li><a href="#journals" class="nav-link">Journals & Articles</a></li>
-            </ul>
+    
+    <!-- New Fixed Navbar at the Top -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <!-- 3 lines icon (Menu Toggle for mobile) -->
+            <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
         </div>
+        
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="navLinks">
+            <a href="#about-me" class="nav-link">About Me</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#courses-enrolled" class="nav-link">Courses Enrolled</a>
+            <a href="#areas-of-interest" class="nav-link">Areas of Interest</a>
+            <a href="#courses-learned" class="nav-link">Courses Learned</a>
+            <a href="#journals" class="nav-link">Journals & Articles</a>
+        </nav>
+        
+        <!-- CV Download button on the right -->
+        <div class="cv-download-btn-header">
+            <a href="https://drive.google.com/uc?export=download&id=1rFaYcSyD7NCcF2f9KRxopPBRvMSGpf1V" download="Sakil_Islam_CV.pdf">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+    </header>
 
-        <!-- Right Content -->
+    <!-- Content Wrapper -->
+    <div class="container-wrapper">
         <div class="content">
-
-            <!-- Download CV button -->
-            <div class="cv-download-btn">
-                <a href="https://drive.google.com/uc?export=download&id=1rFaYcSyD7NCcF2f9KRxopPBRvMSGpf1V" download="Sakil_Islam_CV.pdf">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
 
             <!-- Main Area Section -->
             <div class="abstract-shape"></div>
             
             <section id="about-me" class="content-section fade-in-start">
-                <!-- Profile details moved here, at the top of the main content -->
-                <div class="profile-header-main">
-                    <h1>Sakil Islam</h1>
-                    <p class="position-info">
-                        <span class="position">Student</span> 
-                        <span class="separator">|</span> 
-                        <span class="department">Biochemistry and Biotechnology</span>
-                    </p>
-                    <p class="contact-info-main">
-                        <i class="fas fa-phone"></i> +880 1522-109713
-                    </p>
+                <!-- Combined Profile Header (Image + Social + Text Info) -->
+                <div class="main-profile-info-header">
+                    <img src="https://placehold.co/120x120/4fa934/ffffff?text=SI" alt="Sakil Islam" class="profile-img-main">
+                    
+                    <div class="text-details">
+                        <h1>Sakil Islam</h1>
+                        <p class="position-info">
+                            <span class="position">Student</span> 
+                            <span class="separator">|</span> 
+                            <span class="department">Biochemistry and Biotechnology</span>
+                        </p>
+                        <p class="contact-info-main">
+                            <i class="fas fa-phone"></i> +880 1522-109713
+                        </p>
+                        
+                        <!-- Social Links moved here -->
+                        <div class="social-icons-main">
+                            <a href="https://www.facebook.com/Sakilislam02" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://linkedin.com/in/sakil-islam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgldrdwQJJjkJhdsldxbDLWKbtmKfqtsPcsvXBdqLMbTqFGPkcNcrDKZHKjjbtQhBmTbq" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
                 </div>
                 
                 <h2 class="section-title-with-icon"><i class="fas fa-user-circle"></i> About Me</h2>
@@ -157,7 +163,24 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Simple Scroll Animation for Sections (kept for professional look)
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navLinksAnchor = navLinks.querySelectorAll('a');
+
+            // 1. Toggle mobile menu
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // 2. Close mobile menu when a link is clicked
+            navLinksAnchor.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+
+            // 3. Scroll Animation for Sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -174,22 +197,25 @@
                 observer.observe(section);
             });
             
-            // Highlight active link on scroll
+            // 4. Highlight active link on scroll
             const sections = document.querySelectorAll('.content-section');
-            const navLinks = document.querySelectorAll('.nav-link');
 
             window.addEventListener('scroll', () => {
                 let current = '';
 
+                // Get scroll position from the top of the content area, accounting for the fixed navbar height (approx 60px)
+                const scrollY = window.pageYOffset;
+                const navbarHeight = 60; 
+
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - 100) {
+                    // Adjust sectionTop to account for navbar's fixed position
+                    const sectionTop = section.offsetTop - navbarHeight - 20; 
+                    if (scrollY >= sectionTop) {
                         current = section.getAttribute('id');
                     }
                 });
 
-                navLinks.forEach(link => {
+                navLinksAnchor.forEach(link => {
                     link.classList.remove('active-link');
                     if (link.getAttribute('href').includes(current)) {
                         link.classList.add('active-link');
