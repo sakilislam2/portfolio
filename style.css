@@ -106,7 +106,7 @@ a {
 /* 3. Content Area Styles             */
 /* ---------------------------------- */
 .content {
-    flex: 1;
+    flex: 0;
     padding: 20px;
     background: #ffffff;
     border-radius: 12px;
@@ -406,3 +406,4 @@ a {
         display: none; 
     }
 }
+
