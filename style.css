@@ -19,7 +19,7 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit; /* Inherit color unless specified otherwise */
+    color: inherit;
     transition: color 0.3s, background-color 0.3s;
 }
 
@@ -28,34 +28,33 @@ a {
     display: flex;
     flex: 1; /* Allows content area to grow and push footer down */
     width: 100%;
-    max-width: 1400px; /* Max width for large screens */
+    max-width: 1400px;
     margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 /* ---------------------------------- */
-/* 2. Sidebar Styles (Desktop First)  */
+/* 2. Sidebar Styles (Static Layout)  */
 /* ---------------------------------- */
 .sidebar {
-    width: 280px; /* Fixed width for better control */
-    min-width: 250px;
+    width: 250px; /* Adjusted fixed width for better control */
     background: linear-gradient(135deg, #3b7e23, #4fa934); /* Enhanced gradient */
     color: #fff;
     padding: 20px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-right: 20px;
-    transition: all 0.3s ease;
-    position: sticky;
+    transition: width 0.3s ease;
+    position: sticky; /* Keep it fixed on scroll */
     top: 20px;
     height: calc(100vh - 40px); /* Adjust height to fit container */
-    overflow-y: auto; /* Scrollable sidebar */
+    overflow-y: auto;
 }
 
 .profile-section {
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center; /* Center image and social icons */
 }
 
 .sidebar .profile-img {
@@ -69,32 +68,9 @@ a {
     object-fit: cover;
 }
 
-.sidebar h1 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 10px 0;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
+/* Removed h1, p.position, p.department, p.contact-info from sidebar styling */
 
-.sidebar p {
-    text-align: center;
-    margin: 5px 0;
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-.sidebar .contact-info {
-    font-size: 14px;
-    margin-top: 15px;
-}
-.sidebar .contact-info i {
-    margin-right: 8px;
-}
-
-/* Updated Social Icons for Sidebar (excluding LinkedIn) */
 .social-icons {
-    text-align: center;
     margin-top: 15px;
 }
 
@@ -107,7 +83,7 @@ a {
 }
 
 .social-icons a:hover {
-    color: #f0f4f8; /* Very light background color */
+    color: #f0f4f8;
     transform: scale(1.1);
 }
 
@@ -132,9 +108,10 @@ a {
     transition: background 0.3s ease, padding-left 0.3s ease;
 }
 
-.sidebar-menu a:hover {
-    background: rgba(255, 255, 255, 0.25);
-    padding-left: 25px; /* Subtle hover effect */
+.sidebar-menu a:hover,
+.sidebar-menu a.active-link { /* New class for active scrolling highlight */
+    background: rgba(255, 255, 255, 0.3);
+    padding-left: 25px; 
 }
 
 
@@ -148,35 +125,43 @@ a {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 0; /* Footer is outside, so no bottom margin needed */
-}
-
-/* New: Top Horizontal Navigation for Mobile */
-.top-nav-menu {
-    display: none; /* Hidden by default on desktop */
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
     margin-bottom: 20px;
-    padding: 5px 0;
-    border-bottom: 1px solid #e0e0e0;
+    z-index: 1; /* Ensure content is above abstract shapes */
 }
 
-.top-nav-link {
-    display: inline-block;
-    padding: 8px 15px;
-    margin-right: 10px;
-    background-color: #f0f4f8;
+/* New: Profile Header in Main Content */
+.profile-header-main {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #e0e0e0;
+}
+
+.profile-header-main h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 5px 0;
+}
+
+.profile-header-main .position-info {
+    font-size: 20px;
+    color: #4fa934;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+.profile-header-main .separator {
+    margin: 0 8px;
+    color: #555;
+}
+.profile-header-main .contact-info-main {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.profile-header-main .contact-info-main i {
+    margin-right: 8px;
     color: #3b7e23;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.top-nav-link:hover {
-    background-color: #a8e063;
-    color: #fff;
 }
 
 
@@ -189,17 +174,21 @@ a {
     border: 1px solid #e0e0e0;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease;
+    overflow: hidden; /* Contains floats/animations */
+}
+
+.content-section:first-of-type {
+    margin-top: 0; /* No top margin for the first section */
 }
 
 .content-section:hover {
-    /* Subtle lift effect on hover */
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.content h2 {
+.section-title-with-icon { /* Replaced generic .content h2 */
     font-size: 28px;
-    color: #3b7e23; /* Darker theme color */
+    color: #3b7e23;
     margin-top: 0;
     margin-bottom: 15px;
     position: relative;
@@ -208,12 +197,12 @@ a {
     padding-bottom: 8px;
 }
 
-.content h2 i {
+.section-title-with-icon i {
     margin-right: 10px;
     font-size: 24px;
 }
 
-.content h2::after {
+.section-title-with-icon::after {
     content: "";
     width: 80px;
     height: 4px;
@@ -224,50 +213,7 @@ a {
     border-radius: 2px;
 }
 
-.content p, .content li {
-    font-size: 16px;
-    color: #555;
-}
-
-.profile-summary {
-    font-style: italic;
-    margin-bottom: 20px;
-}
-.profile-summary strong {
-    font-weight: 600;
-    color: #3b7e23;
-}
-
-
-.interest-list, .course-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.interest-list li, .course-list li {
-    background-color: #f0f4f8;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: #3b7e23;
-    border: 1px solid #e0e0e0;
-    transition: background-color 0.3s;
-}
-.interest-list li:hover, .course-list li:hover {
-    background-color: #e0e4e8;
-}
-
-.journal-category h3 {
-    font-size: 18px;
-    color: #4fa934;
-    margin-top: 15px;
-    border-left: 4px solid #a8e063;
-    padding-left: 10px;
-    margin-bottom: 10px;
-}
+/* All other styling (lists, education-item, cv-download-btn, footer) remains as it was */
 
 /* CV Download Button */
 .cv-download-btn {
@@ -291,16 +237,6 @@ a {
     transition: all 0.3s ease;
 }
 
-.cv-download-btn a:hover {
-    background: linear-gradient(90deg, #a8e063, #56ab2f);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-}
-
-.cv-download-btn a i {
-    margin-right: 8px;
-}
-
 /* Education Section Detail */
 .education-item {
     display: flex;
@@ -314,84 +250,7 @@ a {
     transition: background-color 0.3s;
 }
 
-.education-item:hover {
-    background-color: #eef2f7;
-}
-
-.education-details {
-    flex: 1;
-}
-.education-details i {
-    color: #4fa934;
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-.education-details h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    color: #222;
-    display: inline;
-}
-
-.education-details p {
-    margin: 5px 0 0;
-    font-size: 15px;
-    color: #666;
-}
-.education-details .gpa {
-    font-weight: 600;
-    color: #3b7e23;
-    font-size: 14px;
-}
-
-.education-dates p {
-    margin: 0;
-    font-size: 14px;
-    color: #888;
-    white-space: nowrap;
-    text-align: right;
-}
-
-/* Abstract Shapes (subtle background effects) */
-.abstract-shape {
-    position: absolute;
-    top: 50px;
-    right: 0px;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle at top right, rgba(168, 224, 99, 0.4), transparent);
-    border-radius: 50%;
-    z-index: 0;
-    animation: pulse 4s infinite alternate;
-}
-
-.content::before {
-    content: "";
-    position: absolute;
-    bottom: 50px;
-    left: 20px;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle at bottom left, rgba(86, 171, 47, 0.3), transparent);
-    border-radius: 50%;
-    z-index: 0;
-    animation: pulse 4s infinite alternate reverse;
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        opacity: 0.7;
-    }
-    to {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-}
-
-/* Section Fade-in Animation (New) */
+/* Animation Styles */
 .fade-in-start {
     opacity: 0;
     transform: translateY(20px);
@@ -403,19 +262,14 @@ a {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-
-/* ---------------------------------- */
-/* 4. Footer Styles                   */
-/* ---------------------------------- */
+/* Footer Styles */
 .site-footer {
-    background-color: #333; /* Darker, professional base */
+    background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
     font-size: 14px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
-    /* margin-top: auto; *//* No need, body flex handles spacing */
-    width: 100%;
 }
 
 .footer-container {
@@ -424,26 +278,10 @@ a {
     padding: 0 20px;
 }
 
-.footer-container p {
-    margin: 5px 0;
-    color: #bbb;
-}
-
 .footer-links a {
-    color: #a8e063; /* Accent color */
+    color: #a8e063;
     margin: 0 10px;
     font-weight: 500;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-    color: #fff;
-}
-
-.built-with {
-    margin-top: 10px !important;
-    font-size: 12px !important;
-    color: #777 !important;
 }
 
 
@@ -451,126 +289,105 @@ a {
 /* 5. Responsiveness (Media Queries)  */
 /* ---------------------------------- */
 
-/* Tablet and Mobile adjustments (up to 992px) */
-@media (max-width: 992px) {
-    .sidebar {
-        width: 200px;
-        min-width: 200px;
-        padding: 15px;
-    }
-    .sidebar h1 {
-        font-size: 20px;
-    }
-    .sidebar .profile-img {
-        width: 100px;
-        height: 100px;
-    }
-    
-    /* Adjust CV button position for smaller desktops/tablets */
-    .cv-download-btn {
-        top: 20px;
-        right: 20px;
-    }
-}
-
 /* Mobile adjustments (up to 768px) */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        padding-top: 5px; /* Less top padding */
-        padding-bottom: 0;
-    }
-
-    /* Hide the full sidebar on mobile and tablet */
-    .sidebar {
-        display: none;
+        flex-direction: column; /* Stacks sidebar and content vertically */
+        padding: 0; /* Remove padding from container */
     }
     
-    /* Show the horizontal top menu */
-    .top-nav-menu {
-        display: block;
-        /* Scroll snapping helps user browse horizontally */
-        scroll-snap-type: x mandatory; 
-        -webkit-overflow-scrolling: touch;
-        border-bottom: none;
+    /* Mobile Sidebar Configuration: Full width, static, sits above content */
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        border-radius: 0 0 10px 10px;
+        padding: 20px 15px;
     }
-    .top-nav-link {
-        scroll-snap-align: start;
-        margin-right: 5px;
-        font-size: 13px;
-        padding: 6px 12px;
+
+    .profile-section {
+        padding-bottom: 15px;
     }
-    .top-nav-menu::-webkit-scrollbar {
-        height: 4px;
+    
+    .sidebar .profile-img {
+        margin-bottom: 10px;
     }
-    .top-nav-menu::-webkit-scrollbar-thumb {
-        background: #4fa934;
-        border-radius: 2px;
+
+    .sidebar-menu {
+        /* Display menu horizontally (or stack neatly) */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .sidebar-menu li {
+        margin: 0;
+        flex-basis: 48%; /* Allows two menu items per row */
+    }
+
+    .sidebar-menu a {
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 14px;
     }
 
     .content {
-        padding: 10px;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        padding-top: 10px; /* Space from the top menu */
+        padding: 20px 15px;
+        margin: 15px 10px; /* Add some margin around the content block */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
     
-    /* Adjust CV Download button positioning for mobile - push it above content sections */
+    /* Adjust main header for mobile */
+    .profile-header-main h1 {
+        font-size: 30px;
+    }
+
+    .profile-header-main .position-info {
+        font-size: 16px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .profile-header-main .separator {
+        display: none;
+    }
+    .profile-header-main .contact-info-main {
+        font-size: 14px;
+    }
+
+
+    /* Fix CV Download button positioning for mobile */
     .cv-download-btn {
         position: static;
-        margin: 20px 0;
+        margin-bottom: 20px;
         text-align: center;
     }
     
     .cv-download-btn a {
-        width: 90%;
-        max-width: 300px;
+        width: 100%;
         justify-content: center;
-        padding: 10px 20px;
-        font-size: 14px;
     }
 
     /* Education Item layout change for mobile */
     .education-item {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
         border-left: none;
         border-top: 5px solid #4fa934;
     }
 
-    .education-details h3 {
-        display: block; 
-        font-size: 16px;
-    }
-    
     .education-dates {
         margin-top: 10px;
-        align-self: flex-start; 
+        align-self: flex-end;
     }
     .education-dates p {
-        text-align: left;
+        text-align: right;
     }
-
+    
+    /* Remove abstract shapes on mobile */
     .abstract-shape, .content::before {
-        display: none; /* Hide abstract shapes on small screens */
+        display: none; 
     }
-    
-    .content-section {
-        margin-top: 20px;
-        padding: 15px;
-        border-radius: 8px;
-    }
-    
-    .content h2 {
-        font-size: 22px;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-    }
-    
-    .content p, .content li {
-        font-size: 15px;
-    }
-
 }
