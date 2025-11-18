@@ -187,10 +187,10 @@ a {
 .content-section {
     margin-top: 30px;
     padding: 25px;
-    background-color: #f0f4f8;
+    background-color: #ffffff;
     border-radius: 12px;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.00);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease;
     overflow: hidden; 
 }
@@ -406,6 +406,7 @@ a {
         display: none; 
     }
 }
+
 
 
 
