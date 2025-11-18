@@ -6,11 +6,12 @@ body {
     color: #333;
     background-color: #f7fafc;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 a {
     text-decoration: none;
-    color: inherit; /* Use inherit for better link color management */
+    color: inherit;
 }
 
 a:hover {
@@ -20,35 +21,41 @@ a:hover {
 /* Container - Desktop Layout */
 .container {
     display: flex;
-    max-width: 1400px; /* Max width for large screens */
+    max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
+    background: #ffffff; /* Ensure content area has a background */
 }
 
 
 /* Sidebar */
 .sidebar {
-    width: 280px; /* Fixed width for desktop */
-    flex-shrink: 0; /* Prevents shrinking */
-    background: linear-gradient(135deg, #3b7e23, #4fa934); /* Enhanced gradient */
+    width: 280px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #3b7e23, #4fa934);
     color: #fff;
-    padding: 20px;
+    padding: 20px 15px; /* Adjusted padding */
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
-    position: sticky; /* Keep sidebar fixed while scrolling content */
+    position: sticky;
     top: 0;
     height: 100vh;
-    transition: transform 0.3s ease-in-out; /* For mobile menu animation */
+    transition: transform 0.3s ease-in-out;
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
 }
 
 .profile-section {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%; /* Take full width of sidebar padding */
+    text-align: center; /* Center text within this section */
 }
 
 .sidebar .profile-img {
-    width: 120px; /* Slightly larger image */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     margin: 0 auto 15px;
@@ -60,16 +67,16 @@ a:hover {
 
 .sidebar h1 {
     font-size: 24px;
-    margin: 10px 0;
-    text-align: center;
+    margin: 10px 0 5px; /* Adjusted margin */
     font-weight: 600;
 }
 
 .sidebar p {
-    text-align: center;
     margin: 3px 0;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.9);
+    word-wrap: break-word; /* Ensure long words break */
+    padding: 0 5px; /* Add slight horizontal padding */
 }
 
 .sidebar .position {
@@ -84,7 +91,6 @@ a:hover {
 }
 
 .social-icons {
-    text-align: center;
     margin-top: 15px !important;
 }
 
@@ -104,6 +110,7 @@ a:hover {
     list-style: none;
     padding: 0;
     margin-top: 20px;
+    width: 100%; /* Ensure menu takes full width */
 }
 
 .sidebar-menu li {
@@ -119,6 +126,7 @@ a:hover {
     font-weight: 400;
     text-align: left;
     transition: background 0.3s, padding-left 0.3s;
+    color: #fff; /* Ensure link color is white */
 }
 
 .sidebar-menu a:hover {
@@ -145,10 +153,15 @@ a:hover {
     padding: 30px;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Softer, modern shadow */
-    border-left: 4px solid #4fa934; /* Accent color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #4fa934;
     transition: box-shadow 0.3s ease;
 }
+
+.content-section:first-of-type { /* Adjust margin for the first section */
+    margin-top: 0;
+}
+
 
 .content-section:hover {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
@@ -156,7 +169,7 @@ a:hover {
 
 .content h2 {
     font-size: 28px;
-    color: #4fa934; /* Primary theme color */
+    color: #4fa934;
     margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 2px solid #a8e063;
@@ -168,12 +181,12 @@ a:hover {
 }
 
 .content ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding-left: 0;
 }
 
 .course-list li {
-    background-color: #f0fdf4; /* Light green background */
+    background-color: #f0fdf4;
     margin-bottom: 8px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -181,10 +194,9 @@ a:hover {
 }
 
 /* Abstract Shapes */
-/* Removed abstract-shape class to simplify and rely on a single ::before */
 .content::before {
     content: "";
-    position: fixed; /* Fixed background element */
+    position: fixed;
     top: 0;
     right: 0;
     width: 400px;
@@ -203,9 +215,9 @@ a:hover {
 
 .cv-download-btn a {
     padding: 12px 25px;
-    background: #4fa934; /* Solid color */
+    background: #4fa934;
     color: white;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-size: 15px;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -215,7 +227,7 @@ a:hover {
 
 .cv-download-btn a:hover {
     background: #3b7e23;
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(79, 169, 52, 0.5);
 }
 
@@ -223,7 +235,7 @@ a:hover {
 .education-item {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align to top */
+    align-items: flex-start;
     padding: 20px;
     background-color: #fcfcfc;
     margin-bottom: 15px;
@@ -233,17 +245,19 @@ a:hover {
 }
 
 .education-item:hover {
-    background-color: #f0fdf4; /* Highlight on hover */
+    background-color: #f0fdf4;
 }
 
 .education-details {
     flex-grow: 1;
+    margin-right: 15px; /* Add space between details and dates */
 }
 
 .education-details h3 {
     font-size: 19px;
     font-weight: 600;
     color: #3b7e23;
+    margin-top: 0; /* Remove extra margin */
 }
 
 .education-details p {
@@ -260,6 +274,7 @@ a:hover {
 .education-dates p {
     font-weight: 600;
     color: #888;
+    margin-top: 0; /* Align with h3 */
 }
 
 /* Journals and Articles */
@@ -282,12 +297,13 @@ a:hover {
 
 /* Footer */
 .site-footer {
-    background-color: #333; /* Darker, professional footer */
+    background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
     font-size: 14px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Push footer to the bottom if content is short */
 }
 
 .footer-container {
@@ -349,8 +365,9 @@ a:hover {
     
     .cv-download-btn {
         /* Adjust position for smaller screens */
-        position: static;
         text-align: center;
+        margin-right: 0;
+        margin-top: 10px;
     }
 }
 
@@ -358,7 +375,7 @@ a:hover {
 /* Mobile Devices (Max 768px) - Full Responsiveness */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack sidebar and content */
+        flex-direction: column;
         min-height: auto;
     }
 
@@ -368,15 +385,16 @@ a:hover {
         top: 0;
         left: 0;
         height: 100%;
-        width: 80%; /* Takes up 80% of screen width */
+        width: 80%;
         max-width: 300px;
         z-index: 1000;
-        transform: translateX(-100%); /* Hides it off-screen */
+        transform: translateX(-100%);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        padding: 20px 10px; /* Adjust padding for mobile sidebar */
     }
     
     .sidebar.active {
-        transform: translateX(0); /* Slides it into view */
+        transform: translateX(0);
     }
 
     /* Menu Toggle Button for Mobile */
@@ -418,11 +436,16 @@ a:hover {
     .cv-download-btn {
         text-align: center;
         margin-bottom: 25px;
+        margin-top: 15px;
     }
     
     .education-item {
-        flex-direction: column; /* Stack education details vertically */
+        flex-direction: column;
         align-items: flex-start;
+    }
+
+    .education-details {
+        margin-right: 0; /* Remove right margin on mobile */
     }
 
     .education-dates {
@@ -435,6 +458,49 @@ a:hover {
     }
     
     .content::before {
-        display: none; /* Hide abstract shape on mobile for performance */
+        display: none;
+    }
+}
+
+/* Very Small Devices (Max 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 90%; /* Take more width on very small screens */
+        max-width: none; /* No max-width constraint */
+    }
+    
+    .sidebar .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sidebar h1 {
+        font-size: 20px;
+    }
+
+    .sidebar p {
+        font-size: 13px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+
+    .content {
+        padding: 15px;
+        padding-top: 60px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 22px;
+    }
+
+    .cv-download-btn a {
+        font-size: 13px;
+        padding: 10px 20px;
     }
 }
